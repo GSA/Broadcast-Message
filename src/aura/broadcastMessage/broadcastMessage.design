@@ -1,0 +1,3 @@
+<design:component label="BroadcastMessage">
+    <design:attribute name="id" label="RecordId" />
+</design:component>

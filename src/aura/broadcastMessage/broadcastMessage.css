@@ -1,0 +1,9 @@
+.THIS .hideRecordId {
+    color: #b5b5b5;
+    font-size: xx-small;
+}
+.THIS ol {
+    padding-left:40px;
+    margin: 10px 0px;
+    list-style-type: decimal;
+}

@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="id" type="String" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="overRideRecordId" type="String" />
+    <aura:attribute name="onRecordPage" type="Boolean" default="false"/>
+    <aura:attribute name="isRecent" type="Boolean" default="false"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object" />
+    <force:recordData aura:id="recordLoader"
+        recordId="{!v.overRideRecordId}"
+        targetRecord="{!v.record}"
+        targetFields="{!v.simpleRecord}"
+        fields="Id, Name, Message_Content__c, LastModifiedDate, Active__c, RecentUpdate__c, Display_Recently_Updated__c" />
+    	<!-- Displays if the record is active or if the component is on the page in which it references "onRecordPage". 
+			This allows it to display as a preview -->
+    	<aura:if isTrue="{! v.simpleRecord.Active__c || v.onRecordPage}">
+            <div class="slds-box" style="background:white">
+                <aura:if isTrue="{!v.onRecordPage}">
+                    <div class="slds-border_bottom slds-text-align_center slds-text-heading_large slds-m-bottom_large">
+                        PREVIEW
+                        <aura:if isTrue="{!v.simpleRecord.Active__c}">
+                            <span class="slds-text-align_center slds-text-heading_small">(Active)</span>
+                        	<aura:set attribute="else">
+                            	<span class="slds-text-align_center slds-text-heading_small">(Inactive)</span>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.simpleRecord.RecentUpdate__c &amp;&amp; v.simpleRecord.Display_Recently_Updated__c }">
+                	<div class="slds-m-bottom_large">
+                        <lightning:icon iconName="utility:alert" alternativeText="Announcement" />
+						<span class="slds-text-align_center slds-text-heading_small slds-p-left_medium">Recently Updated</span>
+                    </div>
+                </aura:if>
+                <div class="slds-rich-text-editor__output uiOutputRichText forceOutputRichText">
+                    <aura:unescapedHtml value="{!v.simpleRecord.Message_Content__c}"/>
+                </div>
+                <div>
+                    <span class="hideRecordId">{! v.overRideRecordId}</span>
+                </div>
+            </div>
+        </aura:if>
+</aura:component>

@@ -1,33 +1,53 @@
-# code-gov-repo-template
-A basic template to use for all code.gov repositories which includes our standard documents and contact info. Using this as a base ensures that all of our community standards are followed.
+# Broadcast Message
 
+## Description
 
-## Project Name:
-Your project’s name is the first thing people will see upon scrolling down to your README, and is included upon creation of your README file.
+Broadcast Message is a simple Lightning Component and object that allows application owners and stakeholders to update content on pages and utility bars without the need for constant engagement with Salesforce Admins.
 
-## Description:
-A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
+## Dependencies
 
-## Table of Contents: 
-Optionally, include a table of contents in order to allow other people to quickly navigate especially long or detailed READMEs.
+* [Apache ANT](https://ant.apache.org/) 
+* [ant-salesforce.jar](https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/forcemigrationtool_install.htm)
+* Salesforce Lightning, this app does not work in Classic
 
-## Installation: 
-Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
+## Installation
 
-## Usage:
-The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+1. Configure the `build.properties` file to point at a target sandbox org
+1. `ant deployCode`
+1. Assign either the Admin or Creator permission set to current user
+1. Assign ViewAll permissions on the Broadcast Message object for all internal profiles. This will ensure that all users can view any content that gets posted.
 
-## Contributing:
-Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work.
+## Usage
 
-## License: 
-Finally, include a section for the license of your project.
+* Navigate to the Broadcast Message app
+* Create new record
+* Enter "Hello World!" in the Content Message field
+* Check the Active checkbox
+* Save
+* Copy the record ID from the URL
+* Navigate to a page where the content should be displayed
+* Click the cog wheel then Edit Page
+* From the Lightning Components panel on the left, drag the Broadcast Message component into the desired location.
+* Paste the record ID into the component configuration pane
+* Save
+* Navigate back to the parent page and the content should display
 
+### Best Practices
 
-## Questions?
-If you have questions, please feel free to contact us:  
+The default layout for Broadcast Message records contains three columns. Place an instance of the Broadcast Message component into the left most column and have it serve as help text for users. 
+
+## Contributing
+
+See, [Contributing](/CONTRIBUTING.md)
+
+## License
+
+See, [License](/LICENSE.md)
+
+## Questions
+
+If you have questions, please feel free to contact us:
+
 * Open an issue
-* [LinkedIn](https://www.linkedin.com/company/code-gov/)  
-* [Twitter](https://twitter.com/@CodeDotGov)  
-* [Email](mailto:code@gsa.gov)
-* Join our `#opensource-public` channel on Slack: https://chat.18f.gov/
+
+This repository uses a [GSA Github template](https://github.com/GSA/code-gov-repo-template) which makes open sourcing code easier!
