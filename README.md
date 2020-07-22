@@ -4,6 +4,8 @@
 
 Broadcast Message is a simple Lightning Component and object that allows application owners and stakeholders to update content on pages and utility bars without the need for constant engagement with Salesforce Admins.
 
+![Example home page leveraging multiple Broadcast Mesage Components](./img/homepage.png)
+
 ## Dependencies
 
 * [Apache ANT](https://ant.apache.org/) 

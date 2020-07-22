@@ -43,8 +43,8 @@
         <name>ListView</name>
     </types>
     <types>
-        <members>Broadcast_Message_Admin_CRED</members>
-        <members>Broadcast_Message_Creator_CRE</members>
+        <members>OrgWide_Broadcast_Message_Admin_CRED</members>
+        <members>OrgWide_Broadcast_Message_Creator_CRE</members>
         <name>PermissionSet</name>
     </types>
     <version>46.0</version>

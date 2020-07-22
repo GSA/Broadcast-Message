@@ -4,7 +4,7 @@
         <application>Broadcast_Message</application>
         <visible>true</visible>
     </applicationVisibilities>
-    <description>Perm that grants users the ability to create Broadcaset Message records</description>
+    <description>Perm that grants View All/ Mod All on the Broadcast message object. This is intended only for GSA IT Gov Leads.</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Broadcast_Message__c.Active__c</field>
@@ -31,15 +31,15 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Broadcast Message - Creator - CRE</label>
+    <label>OrgWide - Broadcast Message - Admin - CRED</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
+        <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Broadcast_Message__c</object>
-        <viewAllRecords>false</viewAllRecords>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
         <tab>Broadcast_Message__c</tab>
